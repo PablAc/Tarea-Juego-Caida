@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PlayerCollision : MonoBehaviour
 {
     CharacterController myController;
+    [SerializeField] GameObject camera;
 
     private void Awake()
     {
@@ -19,6 +20,11 @@ public class PlayerCollision : MonoBehaviour
         {
             float x = collision.GetComponent<SpdChanger>().alterSpeed;
             myController.changeMaxFallSpeed(x);
+        }
+        else if (collision.CompareTag("Cam"))
+        {
+            CameraController cc = camera.GetComponent<CameraController>();
+            cc.enabled = false;
         }
     }
 }
