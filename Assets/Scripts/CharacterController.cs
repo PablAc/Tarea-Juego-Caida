@@ -38,4 +38,8 @@ public class CharacterController : MonoBehaviour
             transform.localScale = x;
         }
     }
+    public void changeMaxFallSpeed(float changeSpeed)
+    {
+        terminalVelocity = changeSpeed;
+    }
 }
